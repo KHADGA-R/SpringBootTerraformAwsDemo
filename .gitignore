@@ -35,3 +35,8 @@ build/
 ./terraform-aws-deo-0.0.1-SNAPSHOT.jar
 ./terraform-aws-deo-0.0.1-SNAPSHOT.jar.original
 
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.lock.hcl
+
