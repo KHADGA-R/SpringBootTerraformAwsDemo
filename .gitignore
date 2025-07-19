@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+./terraform-aws-deo-0.0.1-SNAPSHOT.jar
+./terraform-aws-deo-0.0.1-SNAPSHOT.jar.original
+
