@@ -32,8 +32,8 @@ build/
 ### VS Code ###
 .vscode/
 
-./terraform-aws-deo-0.0.1-SNAPSHOT.jar
-./terraform-aws-deo-0.0.1-SNAPSHOT.jar.original
+./terraform-aws-demo-0.0.1-SNAPSHOT.jar
+./terraform-aws-demo-0.0.1-SNAPSHOT.jar.original
 
 terraform/.terraform/
 terraform/terraform.tfstate
