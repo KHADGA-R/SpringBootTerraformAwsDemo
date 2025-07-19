@@ -60,7 +60,7 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 resource "aws_instance" "springboot_app" {
   ami                    = "ami-0c7217cdde317cfec"  # Amazon Linux 2 (Free Tier)
   instance_type          = var.instance_type        # From variables.tf
-  key_name               = var.key_name             # Your EC2 key pair (e.g., "my-key")
+  key_name               = var.new-key             # Your EC2 key pair (e.g., "my-key")
   vpc_security_group_ids = [aws_security_group.spring_sg.id]
   iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
 

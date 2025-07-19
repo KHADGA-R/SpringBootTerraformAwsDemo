@@ -1,5 +1,5 @@
 variable "key_name" {
-  default     = "my-key"
+  default     = "new-key"
   description = "EC2 key pair name"
 }
 
