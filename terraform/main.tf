@@ -11,8 +11,8 @@ resource "aws_security_group" "spring_sg" {
   }
 
   ingress {
-    from_port   = 8080
-    to_port     = 8080
+    from_port   = 8081
+    to_port     = 8081
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"] # App access
   }
@@ -58,13 +58,12 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 
 # Launch an EC2 instance with IAM profile and user-data to run the Spring Boot app
 resource "aws_instance" "springboot_app" {
-  ami                    = "ami-0c7217cdde317cfec"  # Amazon Linux 2 (Free Tier)
-  instance_type          = var.instance_type        # From variables.tf
-  key_name               = var.new-key             # Your EC2 key pair (e.g., "my-key")
-  vpc_security_group_ids = [aws_security_group.spring_sg.id]
-  iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
+  ami                         = "ami-0c7217cdde317cfec"  # Ubuntu 22.04 in us-east-1
+  instance_type               = var.instance_type
+  key_name                    = var.new_key
+  vpc_security_group_ids      = [aws_security_group.spring_sg.id]
+  iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 
-  # Template file includes script to install Java and run the JAR from S3
   user_data = templatefile("${path.module}/user-data.sh.tpl", {
     s3_bucket = var.s3_bucket,
     jar_key   = var.jar_key

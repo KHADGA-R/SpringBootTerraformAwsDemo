@@ -1,6 +1,6 @@
-variable "key_name" {
-  default     = "new-key"
+variable "new_key" {
   description = "EC2 key pair name"
+  default     = "new_key"
 }
 
 variable "instance_type" {
